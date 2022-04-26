@@ -4,9 +4,10 @@ import static org.junit.Assert.*;
 import static org.junit.Assert.assertFalse;
 import static ru.netology.Main.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainTest
@@ -15,7 +16,8 @@ public class MainTest
 
     @BeforeAll
     public static void setEmployee() {
-        employee = (List<Employee>) new Employee(1, "Vasya", "Ivanov", "Russia", 25);
+        employee = new ArrayList<>();
+        employee.add(new Employee(1, "Vasya", "Ivanov", "Russia", 25));
     }
 
     //JUnit
