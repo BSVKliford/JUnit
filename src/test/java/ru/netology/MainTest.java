@@ -45,20 +45,24 @@ public class MainTest
     public void testingParseXML() {
         // given:
         String s = "data.xml";
+        Employee emp = new Employee(2,"Ivan","Petrov","RU",23);
         // when:
         List<Employee> result = parseXML(s);
         // then:
         assertFalse(result.isEmpty());
+        assertFalse(result.contains(emp));
     }
 
     @Test
     public void testingReadString() {
         // given:
         String s = "data.json";
+        String r = "RU";
         // when:
         String result = readString(s);
         // then:
         assertNotNull(result);
+        assertTrue(result.contains(r));
     }
 
     @Test
@@ -69,5 +73,6 @@ public class MainTest
         List<Employee> result = jsonToList(s);
         // then:
         assertFalse(result.isEmpty());
+        assertFalse(result.contains(employee));
     }
 }
